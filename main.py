@@ -132,11 +132,11 @@ class Playground(Widget):
         if self.turn_counter == 0:
             self.fruit_rythme = self.fruit.interval + self.fruit.duration
             Clock.schedule_interval(
-                self.fruit.remove, self.fruit_rythme / self.running_time_coeff)
+                self.fruit.remove, self.fruit_rythme / self.running_time_coeff * 2)
         elif self.turn_counter == self.fruit.interval:
             self.pop_fruit()
             Clock.schedule_interval(
-                self.pop_fruit, self.fruit_rythme / self.running_time_coeff)
+                self.pop_fruit, self.fruit_rythme / self.running_time_coeff * 2)
 
         # Check if snake is about to leave the screen with no border
         if not self.border_option:
